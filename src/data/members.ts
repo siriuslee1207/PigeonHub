@@ -78,8 +78,8 @@ export const members: readonly Member[] = [
     isPlaceholder: true,
   },
   {
-    slug: "ek",
-    displayName: "EK",
+    slug: "ekai",
+    displayName: "EKai",
     loftName: PENDING_LOFT,
     location: PENDING_LOCATION,
     tagline: PENDING_TAGLINE,
