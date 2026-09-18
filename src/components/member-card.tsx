@@ -3,6 +3,8 @@ import type { Member } from "@/data/members";
 import { MemberAvatar } from "@/components/member-avatar";
 
 export function MemberCard({ member }: { member: Member }) {
+  const isPresident = member.role === "會長";
+
   return (
     <li>
       <Link
@@ -18,8 +20,13 @@ export function MemberCard({ member }: { member: Member }) {
         <h3 className="mt-4 text-lg font-bold transition-colors group-hover:text-primary">
           {member.displayName}
         </h3>
-        <p className="mt-1 text-sm text-muted">{member.loftName}</p>
-        <p className="text-xs text-muted">{member.location}</p>
+        <p
+          className={`mt-1 text-sm ${
+            isPresident ? "font-medium text-accent" : "text-muted"
+          }`}
+        >
+          {member.role}
+        </p>
       </Link>
     </li>
   );

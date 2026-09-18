@@ -9,13 +9,16 @@
  */
 
 export type Highlight = {
-  /** 年份，例如 2024。頁面會依年份由新到舊排序。 */
+  /** 年份，例如 2025。頁面會依年份由新到舊排序。 */
   year: number;
-  /** 事蹟標題，例如「南海春季綜合冠軍」 */
+  /** 事蹟標題，例如「跨年夜被放鴿子」 */
   title: string;
-  /** 補充說明（選填） */
+  /** 補充說明（選填），例如「會長說在路上了，然後就沒有然後了。」 */
   description?: string;
 };
+
+/** 會長只有一位（放鴿子的人），其他都是會員（被放鴿子的人）。 */
+export type MemberRole = "會長" | "會員";
 
 export type Member = {
   /** 網址段：只能用小寫英數與連字號，且不可重複。 */
@@ -24,17 +27,17 @@ export type Member = {
   displayName: string;
   /** 本名（選填） */
   realName?: string;
-  /** 鴿舍名 */
-  loftName: string;
-  /** 所在縣市 */
-  location: string;
+  /** 身分：會長或會員 */
+  role: MemberRole;
+  /** 所在地（選填） */
+  location?: string;
   /** 一句話簡介 */
   tagline: string;
   /** 自介段落（選填），用 \n 分段 */
   bio?: string;
   /** 頭像路徑，放在 public/ 底下，例如 "/avatars/minj.jpg" */
   avatar: string;
-  /** 事蹟列表 */
+  /** 事蹟列表：被會長放鴿子的紀錄（會長本人則是放鴿子的紀錄） */
   highlights: Highlight[];
   /** true 表示內容尚未填寫，頁面會顯示「資料待補」提示 */
   isPlaceholder?: boolean;
@@ -42,16 +45,13 @@ export type Member = {
 
 export const PLACEHOLDER_AVATAR = "/avatars/_placeholder.svg";
 
-const PENDING_LOFT = "鴿舍名待補";
-const PENDING_LOCATION = "縣市待補";
 const PENDING_TAGLINE = "個人簡介待補";
 
 export const members: readonly Member[] = [
   {
     slug: "minj",
     displayName: "MinJ",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會長",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -60,8 +60,7 @@ export const members: readonly Member[] = [
   {
     slug: "kk",
     displayName: "KK",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -70,8 +69,7 @@ export const members: readonly Member[] = [
   {
     slug: "pistachio",
     displayName: "Pistachio",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -80,8 +78,7 @@ export const members: readonly Member[] = [
   {
     slug: "ekai",
     displayName: "EKai",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -90,8 +87,7 @@ export const members: readonly Member[] = [
   {
     slug: "peggy",
     displayName: "Peggy",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -100,8 +96,7 @@ export const members: readonly Member[] = [
   {
     slug: "eugene",
     displayName: "Eugene",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -110,8 +105,7 @@ export const members: readonly Member[] = [
   {
     slug: "caber",
     displayName: "Caber",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -120,8 +114,7 @@ export const members: readonly Member[] = [
   {
     slug: "hikari",
     displayName: "Hikari",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -130,8 +123,7 @@ export const members: readonly Member[] = [
   {
     slug: "kage",
     displayName: "Kage",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -140,8 +132,7 @@ export const members: readonly Member[] = [
   {
     slug: "ganyaya",
     displayName: "Ganyaya",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -150,8 +141,7 @@ export const members: readonly Member[] = [
   {
     slug: "us",
     displayName: "US",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],
@@ -160,8 +150,7 @@ export const members: readonly Member[] = [
   {
     slug: "fengsao",
     displayName: "FengSao",
-    loftName: PENDING_LOFT,
-    location: PENDING_LOCATION,
+    role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
     highlights: [],

@@ -12,7 +12,7 @@ export default function NotFound() {
       <PigeonMark className="h-16 w-16 text-muted" />
       <h1 className="mt-6 text-3xl font-bold tracking-tight">找不到這一頁</h1>
       <p className="mt-3 max-w-md text-muted">
-        這隻鴿子可能飛錯地方了。請確認網址是否正確，或回到鴿友名錄找找看。
+        看來這一頁也被放鴿子了。請確認網址是否正確，或回到鴿友名錄找找看。
       </p>
       <Link
         href="/members"

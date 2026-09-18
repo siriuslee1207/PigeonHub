@@ -4,9 +4,9 @@ import type { Metadata } from "next";
 
 export const siteShortName = "PigeonHub";
 export const siteName = "PigeonHub 鴿友會";
-export const siteTagline = "以鴿會友，共享天空";
+export const siteTagline = "被會長放過鴿子的，都在這裡";
 export const siteDescription =
-  "PigeonHub 鴿友會官方網站。認識我們的鴿友、鴿舍，以及每個人的養鴿故事與事蹟。";
+  "PigeonHub 鴿友會，由一群都被會長 MinJ 放過鴿子的人組成。認識每一位鴿友，以及他們被放鴿子的事蹟。";
 
 /**
  * 網站正式網址，用於 metadataBase、sitemap、robots。
