@@ -35,7 +35,7 @@ npm run build    # 正式建置，會產生所有靜態頁面
 | `tagline` | 一句話簡介 |
 | `bio` | 自介段落（選填），用 `\n` 分段 |
 | `avatar` | 頭像路徑，沒有照片時填 `PLACEHOLDER_AVATAR` |
-| `highlights` | 事蹟列表：被會長放鴿子的紀錄，會長本人則是放鴿子的紀錄 |
+| `highlights` | 事蹟列表：被會長放鴿子的紀錄，會長本人則是放鴿子的紀錄。每筆有 `year`（年份，選填）、`title`（標題）、`description`（補充，選填）；有年份的由新到舊排，沒年份的排最後 |
 
 範例：
 

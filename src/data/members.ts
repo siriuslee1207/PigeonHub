@@ -9,8 +9,8 @@
  */
 
 export type Highlight = {
-  /** 年份，例如 2025。頁面會依年份由新到舊排序。 */
-  year: number;
+  /** 年份（選填），例如 2025。頁面會依年份由新到舊排序，沒有年份的排在最後。 */
+  year?: number;
   /** 事蹟標題，例如「跨年夜被放鴿子」 */
   title: string;
   /** 補充說明（選填），例如「會長說在路上了，然後就沒有然後了。」 */
@@ -99,7 +99,10 @@ export const members: readonly Member[] = [
     role: "會員",
     tagline: PENDING_TAGLINE,
     avatar: PLACEHOLDER_AVATAR,
-    highlights: [],
+    highlights: [
+      { year: 2023, title: "曾參選 112 年度會長選舉" },
+      { title: "差點在會長登記結婚當天被會長放鴿子" },
+    ],
     isPlaceholder: true,
   },
   {
