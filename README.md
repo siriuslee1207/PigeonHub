@@ -70,6 +70,29 @@ Hero 標語、站名與描述在 [`src/lib/site.ts`](src/lib/site.ts)；「關�
 2. 在 **Settings → Environment Variables** 加上 `NEXT_PUBLIC_SITE_URL=https://你的網域`（Production），然後 Redeploy，讓 sitemap 與分享預覽用正確網址。
 3. 網域確定後再產生名片 QR code。`*.vercel.app` 的預設網址可能會變。
 
+## 名片 QR code
+
+[`scripts/qr/make_qr.py`](scripts/qr/make_qr.py) 把網址編成**靜態** QR code：QR 內容就是網址本身，不經任何短網址或動態 QR 服務，只要網域持續持有、slug 不改就永久有效。需要 [uv](https://docs.astral.sh/uv/)（`winget install astral-sh.uv`），第一次執行會自動安裝相依套件。
+
+```bash
+# 單一網址
+uv run scripts/qr/make_qr.py https://你的網域/members/minj --verify
+
+# 首頁、名錄、所有鴿友個人頁一次產生（同一批統一 QR 版本，名片尺寸一致），並輸出向量 SVG
+uv run scripts/qr/make_qr.py --members --base-url https://你的網域 --svg --verify
+
+# 實測這顆 logo 能放多大：對同一網址掃過多種 logo 大小並用 zxing-cpp 解碼，報告在 out/qr/sweep/
+uv run scripts/qr/make_qr.py https://你的網域/members/pistachio --sweep
+```
+
+- 輸出在 `out/qr/`（已被 git 忽略）；`manifest.json` 記錄每張 QR 編了哪個網址、版本、logo 與驗證結果。
+- logo 預設取 `data/logo/` 下唯一的 PNG，透明背景直接貼在中央，方框邊長為 QR 的 22%（`--logo-ratio`，上限約 0.30）。掃描不穩時加 `--badge rounded` 墊白底，或 `--no-logo`。
+- 有 logo 時容錯等級固定 H。網域 18 字元以內會落在 v5（37 模組）、32 字元以內 v6（41 模組）；再長就進入 v7，正中央會出現對位圖案，不適合放 logo。
+- 列印：每模組至少 0.5 mm，v5 含留白約 22.5 mm、v6 約 24.5 mm。PNG 已寫入對應 DPI，SVG 直接標 mm。
+- `--fg-texture data/material/gold.png` 用材質圖填滿模組，腳本會自動把材質亮度拉到與底色有足夠對比（`--texture-range` 可手動調）。黑底白格（`--fg "#ffffff" --bg "#000000"`）與材質都要用 `--verify` 加實機掃描確認，反相 QR 不是所有掃描器都支援。
+- 只接受 `https://` 正式網域；`localhost` 會被擋、`*.vercel.app` 會警告。
+- 沒有 uv 時：`pip install qrcode==8.2 pillow==12.3.0 zxing-cpp==3.1.1`（Python 3.10–3.13）再用 `python` 執行。
+
 ## 技術
 
 Next.js 16（App Router）、Tailwind CSS v4、TypeScript。全站在建置時靜態產生，沒有資料庫。分享預覽圖由 [`src/app/opengraph-image.tsx`](src/app/opengraph-image.tsx) 在建置時產生一次。
