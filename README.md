@@ -16,10 +16,23 @@ slug 一律小寫英數。**定案並印上名片後請勿更動**，否則 QR c
 
 ```bash
 npm install
-npm run dev      # http://localhost:3000
+npm run dev      # 開發模式 http://localhost:3000，改檔即時更新
 npm run lint     # ESLint
 npm run build    # 正式建置，會產生所有靜態頁面
+npm run check    # lint + build，其中 build 就是 Vercel 部署時跑的步驟
+npm run preview  # check 之後以正式模式啟動 http://localhost:3100
 ```
+
+### commit 前先在本機驗證
+
+Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本機跑 `npm run preview` 看到的畫面，就是推上去後線上會看到的畫面。建議流程：
+
+1. 改完資料或程式後執行 `npm run preview`。
+2. lint 或 build 失敗就代表線上部署也會失敗，先修好再說。
+3. 用瀏覽器開 http://localhost:3100 ，把首頁、名錄、改到的個人頁都點過一遍，手機寬度也切一下看看。
+4. 都沒問題再 commit、push。
+
+`npm run dev` 是開發模式，會多出 dev 專用的提示與較慢的載入，且不會跑 TypeScript 全檔檢查，所以最終確認請以 `npm run preview` 為準。
 
 ## 編輯鴿友資料
 

@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check": "npm run lint && npm run build",
+    "preview": "npm run check && next start -p 3100"
   },
   "dependencies": {
     "next": "16.3.5",
