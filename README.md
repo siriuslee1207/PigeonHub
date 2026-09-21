@@ -12,6 +12,16 @@
 
 slug 一律小寫英數。**定案並印上名片後請勿更動**，否則 QR code 會失效。
 
+### 連結清單（驗證測試用）
+
+全站所有網址都整理在 [`docs/links.txt`](docs/links.txt)（一行一個網址，可直接餵給 curl 或 QR 工具）與 [`docs/links.json`](docs/links.json)（含頁面名稱、路徑、預期 HTTP 狀態碼；`name` 與 QR 輸出檔名一致）。清單由 [`scripts/links/export_links.mjs`](scripts/links/export_links.mjs) 讀 `members.ts` 產生，**改過成員後請重新產生並一起 commit**：
+
+```bash
+npm run links                              # 重新產生 docs/links.txt、docs/links.json
+npm run links:check                        # 產生後逐一請求線上網址，比對狀態碼（含一條應回 404 的探測）
+npm run links -- --base-url https://你的網域  # 接上自訂網域後改網域；預設是目前的 Vercel 網址
+```
+
 ## 本機開發
 
 ```bash
@@ -21,6 +31,8 @@ npm run lint     # ESLint
 npm run build    # 正式建置，會產生所有靜態頁面
 npm run check    # lint + build，其中 build 就是 Vercel 部署時跑的步驟
 npm run preview  # check 之後以正式模式啟動 http://localhost:3100
+npm run images        # 把 data/avatars/、data/photos/ 的照片轉成網站用圖檔（需要 uv，見下方「頭像與照片」）
+npm run images:check  # 檢查圖片清單、檔案與 members.ts 是否一致；build 前會自動執行
 ```
 
 ### commit 前先在本機驗證
@@ -47,7 +59,7 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
 | `location` | 所在地（選填） |
 | `tagline` | 一句話簡介 |
 | `bio` | 自介段落（選填），用 `\n` 分段 |
-| `avatar` | 頭像路徑，沒有照片時填 `PLACEHOLDER_AVATAR` |
+| `avatar` | （選填）手動指定頭像路徑，例如 `"/avatars/TempPP.svg"`。一般不用填，照片交給下方「頭像」流程處理；沒照片也沒指定就顯示預設頭像 |
 | `highlights` | 事蹟列表：被會長放鴿子的紀錄，會長本人則是放鴿子的紀錄。每筆有 `year`（年份，選填）、`title`（標題）、`description`（補充，選填）；有年份的由新到舊排，沒年份的排最後 |
 
 範例：
@@ -59,7 +71,6 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
   role: "會員",
   tagline: "被放鴿子三次仍然相信會長的人。",
   bio: "第一段自介。\n第二段自介。",
-  avatar: "/avatars/kk.jpg",
   highlights: [
     { year: 2025, title: "跨年夜被放鴿子", description: "會長說在路上了，然後就沒有然後了。" },
     { year: 2024, title: "生日聚餐等了兩小時" },
@@ -67,13 +78,40 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
 },
 ```
 
-### 頭像
+### 頭像與照片
 
-把正方形照片（建議 512×512 以上，JPG 或 WebP）放進 [`public/avatars/`](public/avatars/)，再把該鴿友的 `avatar` 改成 `/avatars/<檔名>`。
+照片不用自己裁切壓縮，交給腳本：
+
+1. **頭像**：原始照片存成 `data/avatars/<slug>.jpg`，檔名就是該鴿友的 slug。
+   **相簿照片**：放進 `data/photos/<slug>/`，檔名任意，顯示順序就是檔名排序（數字按大小排），想調順序改檔名即可，例如 `01-xxx.jpg`、`02-xxx.jpg`。
+   兩個資料夾都接受 jpg、png、webp、heic，且都不進 git，原圖只留在你電腦。
+   **注意是 `data/`，不是 `public/`**：`public/avatars/`、`public/photos/` 裡的檔案全部由腳本產生，手動放進去的原圖不會顯示，build 檢查也會報錯。
+2. 執行 `npm run images`（內部是 `python -m uv run scripts/images/make_images.py`，uv 只要有用 pip 裝在 Python 裡就能跑，不需要在 PATH 上）。腳本會轉正、轉 sRGB、輸出 JPEG 並清掉 GPS 等 metadata：頭像置中裁成 512×512 正方形，寫到 `public/avatars/<slug>-<雜湊>.jpg`；相簿照片不裁切、長邊縮到 1600px，寫到 `public/photos/<slug>/<檔名>-<雜湊>.jpg`。同時更新 [`src/data/images.json`](src/data/images.json)。
+3. `npm run preview` 看一下，再把 `public/avatars/`、`public/photos/` 與 `src/data/images.json` 一起 commit。
+
+網站依 images.json 決定每個人的頭像與相簿（[`src/data/images.ts`](src/data/images.ts)），members.ts 不用填路徑。檔名帶內容雜湊，換照片時網址會跟著變，不會吃到瀏覽器或 CDN 的舊快取；不再使用的舊檔會自動刪除。有照片的人，個人頁下方會多出「照片」輪播（[`src/components/photo-carousel.tsx`](src/components/photo-carousel.tsx)）：一次一張、兩側露出前後張邊緣、可滑動或用 ‹ › 切換；點照片會開啟全螢幕放大檢視（[`src/components/photo-lightbox.tsx`](src/components/photo-lightbox.tsx)），同樣可滑動、用 ‹ › 或鍵盤左右鍵切換，按 Esc、右上角 ✕ 或點暗處關閉。
+
+`npm run build` 之前會自動跑 [`scripts/images/check_images.mjs`](scripts/images/check_images.mjs)（本機與 Vercel 都會），忘了轉檔、清單與檔案不符、直接把幾 MB 原圖丟進 public、檔名或資料夾名不是任何 slug，build 都會失敗並提示該執行的指令。它不會替你轉檔，因為 Vercel 的 build 環境沒有影像工具，而且產出應該進 git 才能檢視。
+
+頭像建議：正方形或接近正方形、臉在中央（會切成圓形，四角會被裁掉）、原圖 1000px 以上即可。若某張構圖偏一邊，先自己裁成正方形再放進 `data/avatars/`。相簿照片橫的直的都可以，會等比縮放置中顯示。
 
 ### 首頁文案
 
-Hero 標語、站名與描述在 [`src/lib/site.ts`](src/lib/site.ts)；「關於鴿友會」段落在 [`src/components/club-intro.tsx`](src/components/club-intro.tsx)。
+Hero 標語、站名、成立年份與描述在 [`src/lib/site.ts`](src/lib/site.ts)；「關於鴿友會」段落在 [`src/components/club-intro.tsx`](src/components/club-intro.tsx)。
+
+### Logo
+
+原始 logo 是 [`data/logo/logo.png`](data/logo/logo.png)（透明背景 PNG），名片 QR code 也從這裡取圖。網站用的三個圖檔由 [`scripts/logo/make_logo_assets.py`](scripts/logo/make_logo_assets.py) 產生，換 logo 時把新圖存成同一個路徑再跑一次：
+
+```bash
+uv run scripts/logo/make_logo_assets.py
+```
+
+| 產出 | 用途 |
+|---|---|
+| `src/assets/logo.png` | 網頁 logo（高 1024px），header、首頁 Hero 水印、404 頁、分享預覽圖都用這張，顯示端透過 `src/components/site-logo.tsx` |
+| `src/app/icon.png` | favicon，深藍圓角底 |
+| `src/app/apple-icon.png` | iOS 加到主畫面的圖示 |
 
 ## 部署
 
@@ -85,7 +123,7 @@ Hero 標語、站名與描述在 [`src/lib/site.ts`](src/lib/site.ts)；「關�
 
 ## 名片 QR code
 
-[`scripts/qr/make_qr.py`](scripts/qr/make_qr.py) 把網址編成**靜態** QR code：QR 內容就是網址本身，不經任何短網址或動態 QR 服務，只要網域持續持有、slug 不改就永久有效。需要 [uv](https://docs.astral.sh/uv/)（`winget install astral-sh.uv`），第一次執行會自動安裝相依套件。
+[`scripts/qr/make_qr.py`](scripts/qr/make_qr.py) 把網址編成**靜態** QR code：QR 內容就是網址本身，不經任何短網址或動態 QR 服務，只要網域持續持有、slug 不改就永久有效。需要 [uv](https://docs.astral.sh/uv/)（`winget install astral-sh.uv`，或 `pip install uv`），第一次執行會自動安裝相依套件。若 `uv` 不是可用指令（例如用 pip 裝在 pyenv 的 Python 裡），把下面所有 `uv run` 換成 `python -m uv run` 即可，本文件的 npm script 都已這樣寫。
 
 ```bash
 # 單一網址
