@@ -3,8 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllSlugs, getMemberBySlug } from "@/data/members";
 import { buildOpenGraph, siteName } from "@/lib/site";
+import { getPhotos } from "@/data/images";
 import { MemberProfile } from "@/components/member-profile";
 import { HighlightList } from "@/components/highlight-list";
+import { PhotoCarousel } from "@/components/photo-carousel";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -43,6 +45,7 @@ export default async function MemberPage({ params }: Props) {
   const { slug } = await params;
   const member = getMemberBySlug(slug);
   if (!member) notFound();
+  const photos = getPhotos(member.slug);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
@@ -58,6 +61,17 @@ export default async function MemberPage({ params }: Props) {
           highlights={member.highlights}
           isPlaceholder={member.isPlaceholder}
         />
+        {photos.length > 0 && (
+          <section className="mt-12" aria-labelledby="photos-heading">
+            <h2
+              id="photos-heading"
+              className="mb-4 text-xl font-bold tracking-tight"
+            >
+              照片
+            </h2>
+            <PhotoCarousel photos={photos} ownerName={member.displayName} />
+          </section>
+        )}
       </div>
     </article>
   );
