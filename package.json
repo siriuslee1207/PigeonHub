@@ -11,7 +11,9 @@
     "check": "npm run lint && npm run build",
     "preview": "npm run check && next start -p 3100",
     "images": "python -m uv run scripts/images/make_images.py",
-    "images:check": "node scripts/images/check_images.mjs"
+    "images:check": "node scripts/images/check_images.mjs",
+    "links": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/links/export_links.mjs",
+    "links:check": "npm run links -- --check"
   },
   "dependencies": {
     "next": "16.3.5",

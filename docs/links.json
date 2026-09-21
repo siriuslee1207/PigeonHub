@@ -1,0 +1,175 @@
+{
+  "baseUrl": "https://pigeon-hub-one.vercel.app",
+  "source": "scripts/links/export_links.mjs（讀 src/data/members.ts）",
+  "count": 21,
+  "links": [
+    {
+      "name": "home",
+      "label": "首頁",
+      "path": "/",
+      "url": "https://pigeon-hub-one.vercel.app/",
+      "kind": "page",
+      "expect": 200
+    },
+    {
+      "name": "members",
+      "label": "鴿友名錄",
+      "path": "/members",
+      "url": "https://pigeon-hub-one.vercel.app/members",
+      "kind": "page",
+      "expect": 200
+    },
+    {
+      "name": "member-minj",
+      "label": "MinJ（會長）",
+      "path": "/members/minj",
+      "url": "https://pigeon-hub-one.vercel.app/members/minj",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-kk",
+      "label": "KK（會員）",
+      "path": "/members/kk",
+      "url": "https://pigeon-hub-one.vercel.app/members/kk",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-pistachio",
+      "label": "Pistachio（會員）",
+      "path": "/members/pistachio",
+      "url": "https://pigeon-hub-one.vercel.app/members/pistachio",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-peggy",
+      "label": "Peggy（會員）",
+      "path": "/members/peggy",
+      "url": "https://pigeon-hub-one.vercel.app/members/peggy",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-eugene",
+      "label": "Eugene（會員）",
+      "path": "/members/eugene",
+      "url": "https://pigeon-hub-one.vercel.app/members/eugene",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-caber",
+      "label": "Caber（會員）",
+      "path": "/members/caber",
+      "url": "https://pigeon-hub-one.vercel.app/members/caber",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-kage",
+      "label": "Kage（會員）",
+      "path": "/members/kage",
+      "url": "https://pigeon-hub-one.vercel.app/members/kage",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-hikari",
+      "label": "Hikari（會員）",
+      "path": "/members/hikari",
+      "url": "https://pigeon-hub-one.vercel.app/members/hikari",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-ganyaya",
+      "label": "Ganyaya（會員）",
+      "path": "/members/ganyaya",
+      "url": "https://pigeon-hub-one.vercel.app/members/ganyaya",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-ekai",
+      "label": "EKai（會員）",
+      "path": "/members/ekai",
+      "url": "https://pigeon-hub-one.vercel.app/members/ekai",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-us",
+      "label": "US（會員）",
+      "path": "/members/us",
+      "url": "https://pigeon-hub-one.vercel.app/members/us",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "member-fengsao",
+      "label": "FengSao（會員）",
+      "path": "/members/fengsao",
+      "url": "https://pigeon-hub-one.vercel.app/members/fengsao",
+      "kind": "member",
+      "expect": 200
+    },
+    {
+      "name": "sitemap",
+      "label": "sitemap.xml",
+      "path": "/sitemap.xml",
+      "url": "https://pigeon-hub-one.vercel.app/sitemap.xml",
+      "kind": "meta",
+      "expect": 200
+    },
+    {
+      "name": "robots",
+      "label": "robots.txt",
+      "path": "/robots.txt",
+      "url": "https://pigeon-hub-one.vercel.app/robots.txt",
+      "kind": "meta",
+      "expect": 200
+    },
+    {
+      "name": "og-image",
+      "label": "分享預覽圖",
+      "path": "/opengraph-image",
+      "url": "https://pigeon-hub-one.vercel.app/opengraph-image",
+      "kind": "meta",
+      "expect": 200
+    },
+    {
+      "name": "icon",
+      "label": "網站圖示",
+      "path": "/icon.png",
+      "url": "https://pigeon-hub-one.vercel.app/icon.png",
+      "kind": "meta",
+      "expect": 200
+    },
+    {
+      "name": "apple-icon",
+      "label": "iOS 主畫面圖示",
+      "path": "/apple-icon.png",
+      "url": "https://pigeon-hub-one.vercel.app/apple-icon.png",
+      "kind": "meta",
+      "expect": 200
+    },
+    {
+      "name": "avatar-placeholder",
+      "label": "預設頭像",
+      "path": "/avatars/TempPP.svg",
+      "url": "https://pigeon-hub-one.vercel.app/avatars/TempPP.svg",
+      "kind": "asset",
+      "expect": 200
+    },
+    {
+      "name": "not-found",
+      "label": "不存在的個人頁，應回 404",
+      "path": "/members/not-a-member",
+      "url": "https://pigeon-hub-one.vercel.app/members/not-a-member",
+      "kind": "probe",
+      "expect": 404
+    }
+  ]
+}
