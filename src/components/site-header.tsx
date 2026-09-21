@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { PigeonMark } from "@/components/pigeon-mark";
-import { siteShortName } from "@/lib/site";
+import { SiteLogo } from "@/components/site-logo";
+import { siteName } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "首頁" },
@@ -15,11 +15,8 @@ export function SiteHeader() {
           href="/"
           className="flex items-center gap-2 font-bold tracking-tight text-foreground"
         >
-          <PigeonMark className="h-7 w-7 text-primary" />
-          <span>{siteShortName}</span>
-          <span className="hidden font-normal text-muted sm:inline">
-            鴿友會
-          </span>
+          <SiteLogo height={36} className="h-9 w-auto" priority />
+          <span>{siteName}</span>
         </Link>
         <nav aria-label="主選單" className="flex items-center gap-1 text-sm">
           {navItems.map((item) => (

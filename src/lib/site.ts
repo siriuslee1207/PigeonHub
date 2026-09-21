@@ -2,11 +2,14 @@
 
 import type { Metadata } from "next";
 
-export const siteShortName = "PigeonHub";
-export const siteName = "PigeonHub 鴿友會";
+export const siteName = "MinJ鴿友會";
+/** OG 分享圖取不到中文字型時的純英文備援標題（會搭配英文副標「Pigeon Fanciers Club」）。 */
+export const siteNameAscii = "MinJ";
+/** 鴿友會成立年份，顯示在頁尾版權旁的「Est. 2015」。 */
+export const siteFoundedYear = 2015;
 export const siteTagline = "被會長放過鴿子的，都在這裡";
 export const siteDescription =
-  "PigeonHub 鴿友會，由一群都被會長 MinJ 放過鴿子的人組成。認識每一位鴿友，以及他們被放鴿子的事蹟。";
+  "MinJ鴿友會，由一群都被會長 MinJ 放過鴿子的人組成。認識每一位鴿友，以及他們被放鴿子的事蹟。";
 
 /**
  * 網站正式網址，用於 metadataBase、sitemap、robots。

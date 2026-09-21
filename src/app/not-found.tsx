@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PigeonMark } from "@/components/pigeon-mark";
+import { SiteLogo } from "@/components/site-logo";
 
 export const metadata: Metadata = {
   title: "找不到這一頁",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-center px-4 py-24 text-center sm:px-6">
-      <PigeonMark className="h-16 w-16 text-muted" />
+      <SiteLogo height={96} className="h-24 w-auto" />
       <h1 className="mt-6 text-3xl font-bold tracking-tight">找不到這一頁</h1>
       <p className="mt-3 max-w-md text-muted">
         看來這一頁也被放鴿子了。請確認網址是否正確，或回到鴿友名錄找找看。
