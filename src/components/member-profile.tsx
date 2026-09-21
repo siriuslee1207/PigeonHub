@@ -1,5 +1,6 @@
 import type { Member } from "@/data/members";
 import { MemberAvatar } from "@/components/member-avatar";
+import { getAvatarSrc } from "@/data/images";
 
 export function MemberProfile({ member }: { member: Member }) {
   const bioParagraphs = member.bio?.split("\n").filter(Boolean) ?? [];
@@ -8,7 +9,7 @@ export function MemberProfile({ member }: { member: Member }) {
   return (
     <section className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
       <MemberAvatar
-        src={member.avatar}
+        src={getAvatarSrc(member)}
         alt={`${member.displayName} 的頭像`}
         size={192}
         priority

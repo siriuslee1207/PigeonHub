@@ -5,7 +5,8 @@
  * 1. 每位鴿友一個物件，順序就是名錄的顯示順序。
  * 2. slug 是網址的一部分（/members/<slug>），會印在名片 QR code 上，定案後請勿更動。
  * 3. 資料填好後，把 isPlaceholder: true 那一行刪掉，頁面上的「資料待補」提示就會消失。
- * 4. 頭像放到 public/avatars/，再把 avatar 改成 "/avatars/<檔名>"。
+ * 4. 頭像與照片：頭像存成 data/avatars/<slug>.jpg，個人頁相簿的照片放進 data/photos/<slug>/，
+ *    執行 npm run images 即可，這裡不用填路徑。詳見 README「頭像與照片」。
  */
 
 export type Highlight = {
@@ -35,15 +36,19 @@ export type Member = {
   tagline: string;
   /** 自介段落（選填），用 \n 分段 */
   bio?: string;
-  /** 頭像路徑，放在 public/ 底下，例如 "/avatars/minj.jpg" */
-  avatar: string;
+  /**
+   * 手動指定頭像路徑（選填），例如 "/avatars/TempPP.svg"，會優先於腳本產生的照片。
+   * 一般不用填：照片放到 data/avatars/<slug>.jpg 跑 npm run images，網站會自動對應；
+   * 沒照片也沒指定就顯示 PLACEHOLDER_AVATAR。
+   */
+  avatar?: string;
   /** 事蹟列表：被會長放鴿子的紀錄（會長本人則是放鴿子的紀錄） */
   highlights: Highlight[];
   /** true 表示內容尚未填寫，頁面會顯示「資料待補」提示 */
   isPlaceholder?: boolean;
 };
 
-export const PLACEHOLDER_AVATAR = "/avatars/_placeholder.svg";
+export const PLACEHOLDER_AVATAR = "/avatars/TempPP.svg";
 
 const PENDING_TAGLINE = "個人簡介待補";
 
@@ -53,7 +58,6 @@ export const members: readonly Member[] = [
     displayName: "MinJ",
     role: "會長",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -62,7 +66,6 @@ export const members: readonly Member[] = [
     displayName: "KK",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -71,7 +74,6 @@ export const members: readonly Member[] = [
     displayName: "Pistachio",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -80,7 +82,6 @@ export const members: readonly Member[] = [
     displayName: "Peggy",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -89,7 +90,6 @@ export const members: readonly Member[] = [
     displayName: "Eugene",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [
       { year: 2023, title: "曾參選 112 年度會長選舉" },
       { title: "差點在會長登記結婚當天被會長放鴿子" },
@@ -101,7 +101,6 @@ export const members: readonly Member[] = [
     displayName: "Caber",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -110,7 +109,6 @@ export const members: readonly Member[] = [
     displayName: "Kage",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -119,7 +117,6 @@ export const members: readonly Member[] = [
     displayName: "Hikari",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -128,7 +125,6 @@ export const members: readonly Member[] = [
     displayName: "Ganyaya",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -137,7 +133,6 @@ export const members: readonly Member[] = [
     displayName: "EKai",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -146,7 +141,6 @@ export const members: readonly Member[] = [
     displayName: "US",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },
@@ -155,7 +149,6 @@ export const members: readonly Member[] = [
     displayName: "FengSao",
     role: "會員",
     tagline: PENDING_TAGLINE,
-    avatar: PLACEHOLDER_AVATAR,
     highlights: [],
     isPlaceholder: true,
   },

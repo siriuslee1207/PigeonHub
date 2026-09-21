@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/images/check_images.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "check": "npm run lint && npm run build",
-    "preview": "npm run check && next start -p 3100"
+    "preview": "npm run check && next start -p 3100",
+    "images": "python -m uv run scripts/images/make_images.py",
+    "images:check": "node scripts/images/check_images.mjs"
   },
   "dependencies": {
     "next": "16.3.5",

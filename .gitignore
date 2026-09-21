@@ -44,3 +44,7 @@ next-env.d.ts
 __pycache__/
 *.pyc
 .venv/
+
+# source photos for scripts/images/make_images.py stay local; web-ready copies live in public/avatars and public/photos
+/data/avatars/
+/data/photos/

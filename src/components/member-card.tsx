@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Member } from "@/data/members";
 import { MemberAvatar } from "@/components/member-avatar";
+import { getAvatarSrc } from "@/data/images";
 
 export function MemberCard({ member }: { member: Member }) {
   const isPresident = member.role === "會長";
@@ -12,7 +13,7 @@ export function MemberCard({ member }: { member: Member }) {
         className="group flex h-full flex-col items-center rounded-2xl border border-line bg-surface p-5 text-center transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
       >
         <MemberAvatar
-          src={member.avatar}
+          src={getAvatarSrc(member)}
           alt={`${member.displayName} 的頭像`}
           size={96}
           className="h-20 w-20 sm:h-24 sm:w-24"
