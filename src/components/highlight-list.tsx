@@ -6,12 +6,12 @@ type Props = {
 };
 
 export function HighlightList({ highlights, isPlaceholder }: Props) {
-  // 有年份的由新到舊排序，沒有年份的排在最後（維持原本填寫順序）。
+  // 有年份的由舊到新排序，沒有年份的排在最後（維持原本填寫順序）。
   const sorted = [...highlights].sort((a, b) => {
     if (a.year === undefined && b.year === undefined) return 0;
     if (a.year === undefined) return 1;
     if (b.year === undefined) return -1;
-    return b.year - a.year;
+    return a.year - b.year;
   });
 
   return (
