@@ -1,7 +1,561 @@
 {
   "generatedBy": "scripts/images/make_images.py",
   "avatarSize": 512,
-  "photoMaxEdge": 1600,
-  "avatars": {},
-  "photos": {}
+  "photoMaxEdge": 2400,
+  "avatars": {
+    "caber": {
+      "src": "/avatars/caber-246b9149.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 37459,
+      "source": "caber.png",
+      "sourceSha256": "7408b119028381fd9c744b54577a6529adbf35fc8ac46df89d8ffd02b29faf3d"
+    },
+    "ekai": {
+      "src": "/avatars/ekai-63bc54c5.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 33574,
+      "source": "ekai.png",
+      "sourceSha256": "650f4e9f51cb0491722ea7259b56b7c01424bf0001c1f27896f84f9e1f114d4f"
+    },
+    "eugene": {
+      "src": "/avatars/eugene-a757b236.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 37418,
+      "source": "eugene.png",
+      "sourceSha256": "5397cca9cacfb1962c202dbf49f3f7a757dfac6050021eea63a390e79cb2542c"
+    },
+    "fengsao": {
+      "src": "/avatars/fengsao-92918697.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 34492,
+      "source": "fengsao.png",
+      "sourceSha256": "81b619e0640d4bdc2dca0c87a6c562dbc219803959838ff270e08a0212c8b1f2"
+    },
+    "ganyaya": {
+      "src": "/avatars/ganyaya-987dc6d6.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 27299,
+      "source": "ganyaya.png",
+      "sourceSha256": "9061bec956cd83d408175256e8ddc4ba6f82c79eefdff64d55cd12a091066ec5"
+    },
+    "hikari": {
+      "src": "/avatars/hikari-9d4eb863.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 36416,
+      "source": "hikari.png",
+      "sourceSha256": "2fb5c160ea17b2a4a9702f31132e35ffcf819ae7cd5c0e2d52cec158d063d3fd"
+    },
+    "kage": {
+      "src": "/avatars/kage-3a6c84e0.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 53246,
+      "source": "kage.png",
+      "sourceSha256": "41e94c7f1e5b879daa14c959bf9e475719ed26c0821f91f22a8feb20be6d60ba"
+    },
+    "kk": {
+      "src": "/avatars/kk-298a5739.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 33834,
+      "source": "kk.png",
+      "sourceSha256": "eccb77cc796c47dc20a697b3a698ec58da59ab9009bd83918395a22f46083ce1"
+    },
+    "minj": {
+      "src": "/avatars/minj-a6b92087.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 41941,
+      "source": "minj.png",
+      "sourceSha256": "90dc2447aeecdbe2634f4f6e0fe582ee10cf0ea14a167decf4c9e56d6348bb87"
+    },
+    "peggy": {
+      "src": "/avatars/peggy-e24841f6.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 42947,
+      "source": "peggy.png",
+      "sourceSha256": "d1639ad63de7a97920936db260c20b43f32ca2862d88d092bb629f65c114fd3e"
+    },
+    "pistachio": {
+      "src": "/avatars/pistachio-8a6b14c5.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 41191,
+      "source": "pistachio.png",
+      "sourceSha256": "9d2420ced5f97fcc2bf53a47a1f35e1dfa61d70c6c91309878be65cb1e871412"
+    },
+    "us": {
+      "src": "/avatars/us-2d8f1240.jpg",
+      "width": 512,
+      "height": 512,
+      "bytes": 65096,
+      "source": "us.png",
+      "sourceSha256": "89afebaad36d90786b033b7106d3fa40c2f1e947a301b00f57513e339372e2c7"
+    }
+  },
+  "photos": {
+    "caber": [
+      {
+        "src": "/photos/caber/0-2026-0-019c5fb7305b94a7acf3c8a9c87a8ba025a3e7b0d0-168f0b49.jpg",
+        "width": 2048,
+        "height": 1536,
+        "bytes": 408528,
+        "source": "0_2026_0_019c5fb7305b94a7acf3c8a9c87a8ba025a3e7b0d0.jpg",
+        "sourceSha256": "b0e9a8afe100a28c28b79e9e213477ace60775221092402edd8b67887b69fcc2"
+      },
+      {
+        "src": "/photos/caber/2025-img-8328-98eed142.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 796875,
+        "source": "2025_IMG_8328.HEIC",
+        "sourceSha256": "cee723e2b1a6d214b74ad1350777ef05681690f267b8ea936c48d39f54b88ef8"
+      },
+      {
+        "src": "/photos/caber/2026-1-01e98cbe7230fe4aba823d48a5fbcb45dde71025b2-0920eb56.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 626262,
+        "source": "2026_1_01e98cbe7230fe4aba823d48a5fbcb45dde71025b2.jpg",
+        "sourceSha256": "ce3d5151ed7beb82ef4c26c8c3693121ac199a378603bd1478aafd946c1408c2"
+      },
+      {
+        "src": "/photos/caber/2026-2-0102c53b97d25d441e227a5886f46f3460fb6191d5-5c16f414.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 567651,
+        "source": "2026_2_0102c53b97d25d441e227a5886f46f3460fb6191d5.jpg",
+        "sourceSha256": "bc1b2257fe0315b7aaa7a84287627d1badf7a50521f3e52dbeff23499ea60dac"
+      },
+      {
+        "src": "/photos/caber/2026-img-3995-916752a2.jpg",
+        "width": 1477,
+        "height": 1108,
+        "bytes": 298733,
+        "source": "2026_IMG_3995.JPG",
+        "sourceSha256": "810f62d2ae0f4513545edfc2542273d957082885e58e6e81b6444b30170720dc"
+      }
+    ],
+    "ekai": [
+      {
+        "src": "/photos/ekai/2024-0388-b7400408-a8f047a9.jpg",
+        "width": 2400,
+        "height": 1600,
+        "bytes": 286581,
+        "source": "2024_0388(B7400408).jpg",
+        "sourceSha256": "f02098885884b77854e3db80580e4318cf85cf6df14310eed4606db34fded4ff"
+      },
+      {
+        "src": "/photos/ekai/2024-img-9703-0c021137.jpg",
+        "width": 1800,
+        "height": 2400,
+        "bytes": 737905,
+        "source": "2024_IMG_9703.JPG",
+        "sourceSha256": "092e2558a48deb813121c2f42d59184e7615b382919bab08b2775e21b6a1a325"
+      },
+      {
+        "src": "/photos/ekai/2026-img-3858-0e985493.jpg",
+        "width": 2048,
+        "height": 1536,
+        "bytes": 880539,
+        "source": "2026_IMG_3858.JPG",
+        "sourceSha256": "7a995fb39dedabfc08fb1dc97001ec502c987318154f5588c2908c15eb939bb6"
+      },
+      {
+        "src": "/photos/ekai/2026-img-8299-4aa5674d.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 562332,
+        "source": "2026_IMG_8299.JPG",
+        "sourceSha256": "5aed681d479cae0a3771cf159dc45bcec3972eac0d92d91bf9a97461c2c8a3a4"
+      }
+    ],
+    "eugene": [
+      {
+        "src": "/photos/eugene/2023-img-0682-26e33d66.jpg",
+        "width": 2400,
+        "height": 1806,
+        "bytes": 810963,
+        "source": "2023_IMG_0682.png",
+        "sourceSha256": "7be2853e042929419b6880a11d70ba9f4578c5fdd5b1b6409999c53aa58c4623"
+      },
+      {
+        "src": "/photos/eugene/2026-01bdae802ff603f77654a1fbd0150b029134a2b634-79a952f1.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 419986,
+        "source": "2026_01bdae802ff603f77654a1fbd0150b029134a2b634.jpg",
+        "sourceSha256": "118c1244607492d599ae0d5c8bba750221120d3b2d26b2aa8bac4a5e772f77c2"
+      },
+      {
+        "src": "/photos/eugene/2026-01fa7b1df8a359939fa8f74313b363c7f16df8834e-b76abafe.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 526539,
+        "source": "2026_01fa7b1df8a359939fa8f74313b363c7f16df8834e.jpg",
+        "sourceSha256": "ae16e35f21db742cf1ff4a297210b8569fedd509ea52f367b2ea1a0f4b7c7a43"
+      },
+      {
+        "src": "/photos/eugene/2026-012fb6629e62a8c54e4633b1eff625f29e1adf5a58-1152c75a.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 577929,
+        "source": "2026_012fb6629e62a8c54e4633b1eff625f29e1adf5a58.jpg",
+        "sourceSha256": "938fdc09caa61abdf4616ad69d09889314516ab81c5dbb99b07bcf407a65e6c5"
+      },
+      {
+        "src": "/photos/eugene/2026-015b1f47bb29bcac421c7f9b27f0e6abf43f378860-6b40710f.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 505025,
+        "source": "2026_015b1f47bb29bcac421c7f9b27f0e6abf43f378860.jpg",
+        "sourceSha256": "496fd15d2bf0d2ab3ca5fe3b0153bd7093e3e2a28eedebaf0e7d821d53acc12b"
+      },
+      {
+        "src": "/photos/eugene/2026-016ef058524f86fb7e6000a47891e63254f4b7a117-a7fca117.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 683299,
+        "source": "2026_016ef058524f86fb7e6000a47891e63254f4b7a117.jpg",
+        "sourceSha256": "cb57231255f1d3a1539958f494082f2d1c7dad510d128982de6e533dcdd6feff"
+      }
+    ],
+    "fengsao": [
+      {
+        "src": "/photos/fengsao/0-2026-img-2433-2d1db934.jpg",
+        "width": 1800,
+        "height": 2400,
+        "bytes": 454785,
+        "source": "0_2026_IMG_2433.HEIC",
+        "sourceSha256": "ccfdc10245ca06f7f7b10a99288d2aff3a3c6176502a38a8c8e6e9790e73fb12"
+      },
+      {
+        "src": "/photos/fengsao/2024-img-0568-20659925.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 686968,
+        "source": "2024_IMG_0568.JPG",
+        "sourceSha256": "100cc245b185713178916c0f351894abcd498db30e27144195b0dfc067026709"
+      },
+      {
+        "src": "/photos/fengsao/2024-img-4331-2e7ff956.jpg",
+        "width": 1800,
+        "height": 2400,
+        "bytes": 790342,
+        "source": "2024_IMG_4331.HEIC",
+        "sourceSha256": "9190cf9fe2eb854bf4b9a8ef4ed86982ff785e46dc82259f66d04abc69d69fd5"
+      }
+    ],
+    "ganyaya": [
+      {
+        "src": "/photos/ganyaya/0-2024-0-photo-2024-04-28-20-50-11-d76b40cb.jpg",
+        "width": 960,
+        "height": 1280,
+        "bytes": 124979,
+        "source": "0_2024_0_photo_2024-04-28_20-50-11.jpg",
+        "sourceSha256": "e1bfc01aa02d5be7ec720e62ffa890c129b1be8d395b788ee0d5bce522ac3ae8"
+      },
+      {
+        "src": "/photos/ganyaya/2021-img-4674-478ff695.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 519675,
+        "source": "2021_IMG_4674.HEIC",
+        "sourceSha256": "941f2b30122d786864635e207a03328078efa5603cc155bca30c9bd923b3e9d7"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-0561-19b0a7cf.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 832917,
+        "source": "2024_IMG_0561.JPG",
+        "sourceSha256": "c8351b12caa092902c58e3d27f873afc6a320e12c60ed45778f20acede73462d"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-3846-19bd238f.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 912952,
+        "source": "2024_IMG_3846.JPG",
+        "sourceSha256": "ed408b169db094ec2dfe3d01dcb7ab72486b39c03991f5e36eeb5f14a62d4eb0"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-8129-1d527d7d.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 716429,
+        "source": "2024_IMG_8129.JPG",
+        "sourceSha256": "2bb3b795377d12d882ef2ea3c01ec3c310fba0b4e8c8f493ab42f59d306180db"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-8337-964fce24.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 1029386,
+        "source": "2024_IMG_8337.JPG",
+        "sourceSha256": "4b07294fc2a2a1db8b6644d83fda7c27ffbdf3afff125951684d60918d58c411"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-8490-85fb325a.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 609244,
+        "source": "2024_IMG_8490.JPG",
+        "sourceSha256": "d07ea54971f22ec29a796494ceb354a210b3da0a6ec004621f1682a72845a8d3"
+      },
+      {
+        "src": "/photos/ganyaya/2024-img-9196-5555ede8.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 428101,
+        "source": "2024_IMG_9196.JPG",
+        "sourceSha256": "27d2b7ea513c9518a8fbd2f1d9dc61d657e4e5fac7c36bf3ab4323362de28c20"
+      }
+    ],
+    "hikari": [
+      {
+        "src": "/photos/hikari/0-2026-09-26-020629-20100f49.jpg",
+        "width": 1527,
+        "height": 1627,
+        "bytes": 146034,
+        "source": "0_螢幕擷取畫面 2026-09-26 020629.png",
+        "sourceSha256": "6011b6abf4f63fff8a44e43369476d53b7ba19a1ce4f408a1ce8e4061b5c7566"
+      },
+      {
+        "src": "/photos/hikari/1-2026-09-26-020600-25354a6d.jpg",
+        "width": 1541,
+        "height": 1655,
+        "bytes": 214197,
+        "source": "1_螢幕擷取畫面 2026-09-26 020600.png",
+        "sourceSha256": "99b2de182dd02f0936768e033b003d125be25dc785bc8b95d489187ed5cc61f5"
+      },
+      {
+        "src": "/photos/hikari/2-2026-09-26-020616-4594565f.jpg",
+        "width": 1549,
+        "height": 1648,
+        "bytes": 312585,
+        "source": "2_螢幕擷取畫面 2026-09-26 020616.png",
+        "sourceSha256": "7c63ed9bb3ef976b91d9721a076c0bd429dd7c01cd0a2b0bdbaa170abb6df08b"
+      }
+    ],
+    "kage": [
+      {
+        "src": "/photos/kage/0-2026-09-26-020354-deb06bf8.jpg",
+        "width": 1195,
+        "height": 1649,
+        "bytes": 190408,
+        "source": "0_螢幕擷取畫面 2026-09-26 020354.png",
+        "sourceSha256": "346a980080a4bdb5312c77de9a8be5f3f030c328e7a3ff98e5916d6a036479be"
+      },
+      {
+        "src": "/photos/kage/1-2026-09-26-020335-a3424539.jpg",
+        "width": 1201,
+        "height": 1643,
+        "bytes": 167425,
+        "source": "1_螢幕擷取畫面 2026-09-26 020335.png",
+        "sourceSha256": "52e440da87a321cad89c147d27fba2edc20438df4f833049e8c41cd15009f9b5"
+      },
+      {
+        "src": "/photos/kage/2-2026-09-26-020521-a5e8456f.jpg",
+        "width": 1193,
+        "height": 1598,
+        "bytes": 170898,
+        "source": "2_螢幕擷取畫面 2026-09-26 020521.png",
+        "sourceSha256": "c432831a10cc75afa92c8aacb1995720ea671119979329be0c5bd97573573b6c"
+      },
+      {
+        "src": "/photos/kage/3-2026-09-26-020503-3d40abfb.jpg",
+        "width": 1177,
+        "height": 1606,
+        "bytes": 154326,
+        "source": "3_螢幕擷取畫面 2026-09-26 020503.png",
+        "sourceSha256": "26b3f625ad2f471989a37d8975a933fcc9bc8f428fdb98b35f5380169b36ff33"
+      }
+    ],
+    "kk": [
+      {
+        "src": "/photos/kk/2024-0-img-8248-511b1293.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 597286,
+        "source": "2024_0_IMG_8248.JPG",
+        "sourceSha256": "93d29461481482fae44d41473c6e98ea2fdc884926d86634d7a78f1f519995b1"
+      },
+      {
+        "src": "/photos/kk/2024-1-img-3802-7b68ce9a.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 505533,
+        "source": "2024_1_IMG_3802.JPG",
+        "sourceSha256": "991b0a87aee5a382974049f88d10b6eb3244ee27b8a2e67341a24099fbdec98d"
+      },
+      {
+        "src": "/photos/kk/2024-2-img-9781-b2380008.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 758331,
+        "source": "2024_2_IMG_9781.JPG",
+        "sourceSha256": "277206fdc45d5eacb8b1b88d1d9db19a18f6590d13b51a77097783e7f291350f"
+      },
+      {
+        "src": "/photos/kk/2024-3-img-3794-b5e6e6ae.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 374925,
+        "source": "2024_3_IMG_3794.JPG",
+        "sourceSha256": "52c4cef9ce625c2ea76a17e1368e64b69dada1753b2df731cb38d8b9ed1dd3ae"
+      }
+    ],
+    "minj": [
+      {
+        "src": "/photos/minj/0-2023-img-0676-11b90b99.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 924666,
+        "source": "0_2023_IMG_0676.JPG",
+        "sourceSha256": "5092f096fbf3338f040a6fa69c2a88df2137ac55110f7f71b28ece0a8d47e2e8"
+      },
+      {
+        "src": "/photos/minj/2020-img-9726-ce03f4e6.jpg",
+        "width": 2364,
+        "height": 1774,
+        "bytes": 630785,
+        "source": "2020_IMG_9726.JPG",
+        "sourceSha256": "5e2c32810cba791edd545e228f9e7e672584a30bb77f1cd5108f5510e2babb35"
+      },
+      {
+        "src": "/photos/minj/2023-img-0683-90fc0838.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 705882,
+        "source": "2023_IMG_0683.JPG",
+        "sourceSha256": "ad798209b237b8b6dd3daa5b5955beb0c5055e5db1cc235df26e56c5955c1cd6"
+      },
+      {
+        "src": "/photos/minj/2023-photo-17-2023-03-17-00-56-29-782b0bcc.jpg",
+        "width": 1280,
+        "height": 960,
+        "bytes": 226849,
+        "source": "2023_photo_17_2023-03-17_00-56-29.jpg",
+        "sourceSha256": "a17287199a53d375f552549fd3811192e885475bc82196ced7dd3727893d2020"
+      },
+      {
+        "src": "/photos/minj/2024-img-8248-511b1293.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 597286,
+        "source": "2024_IMG_8248.JPG",
+        "sourceSha256": "93d29461481482fae44d41473c6e98ea2fdc884926d86634d7a78f1f519995b1"
+      },
+      {
+        "src": "/photos/minj/2024-img-9754-6c63db44.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 461875,
+        "source": "2024_IMG_9754.JPG",
+        "sourceSha256": "13c296875ef6b15a5bb55c80b8ee3b10ba079af38f284ef52ebd6fd095455c28"
+      }
+    ],
+    "peggy": [
+      {
+        "src": "/photos/peggy/2023-img-1190-e96b83cc.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 812167,
+        "source": "2023_IMG_1190.HEIC",
+        "sourceSha256": "3abf09d3444e854902523793dcbee2a73de706ff78c43dca48c0eef95beafd02"
+      },
+      {
+        "src": "/photos/peggy/2024-0-photo-2024-04-28-20-50-26-974f5bad.jpg",
+        "width": 960,
+        "height": 1280,
+        "bytes": 200904,
+        "source": "2024_0_photo_2024-04-28_20-50-26.jpg",
+        "sourceSha256": "72975f10ad4a060f21860648a7c3aaffba3525437a9c769d50ca8726ac53bec4"
+      },
+      {
+        "src": "/photos/peggy/2024-img-8053-73edf4ec.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 448085,
+        "source": "2024_IMG_8053.JPG",
+        "sourceSha256": "311ccabb4c41174df05290eca1d7f380ecb0d450ffb43f3fe3b2a3b994c50024"
+      },
+      {
+        "src": "/photos/peggy/2026-0169b69ee390e695f3c2731c45a771fa7b1f5b918b-5b29ddb3.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 374234,
+        "source": "2026_0169b69ee390e695f3c2731c45a771fa7b1f5b918b.jpg",
+        "sourceSha256": "fe7ba765dd484e642aae8759f38fd1fae8a295f41c57dbacf899369be1405828"
+      }
+    ],
+    "pistachio": [
+      {
+        "src": "/photos/pistachio/0-2026-09-26-022145-4b69553f.jpg",
+        "width": 1118,
+        "height": 1713,
+        "bytes": 102650,
+        "source": "0_螢幕擷取畫面 2026-09-26 022145.png",
+        "sourceSha256": "313f3668cb07ca823312ae3406a89e747d04b4312cb56c5497b7cd0fa0c32650"
+      },
+      {
+        "src": "/photos/pistachio/1-2026-09-26-020823-d0b53f68.jpg",
+        "width": 1702,
+        "height": 1701,
+        "bytes": 558521,
+        "source": "1_螢幕擷取畫面 2026-09-26 020823.png",
+        "sourceSha256": "e008fee19b4914b5f19116b8b5a1512f2fce4f87fad60eb5d480516da9d8ada0"
+      },
+      {
+        "src": "/photos/pistachio/2-2026-09-26-020733-e6447b6a.jpg",
+        "width": 1705,
+        "height": 1685,
+        "bytes": 277385,
+        "source": "2_螢幕擷取畫面 2026-09-26 020733.png",
+        "sourceSha256": "9eddd2cdbc49be29d2b3d60c35e44dc3a366b9ec241a9142c237bc84dc1e979a"
+      },
+      {
+        "src": "/photos/pistachio/3-2026-09-26-020757-fda0e32a.jpg",
+        "width": 1216,
+        "height": 1716,
+        "bytes": 298318,
+        "source": "3_螢幕擷取畫面 2026-09-26 020757.png",
+        "sourceSha256": "76fc33ce7361dbb8f37519d475f0ed651ac64ae94e78b2125d13948c3bb30424"
+      },
+      {
+        "src": "/photos/pistachio/4-2026-09-26-020742-4c1b040b.jpg",
+        "width": 1413,
+        "height": 1698,
+        "bytes": 348085,
+        "source": "4_螢幕擷取畫面 2026-09-26 020742.png",
+        "sourceSha256": "cc8ea23e8756389c225ededf3def3165bdfab28476d2ff9770e5d7cb60cd624f"
+      }
+    ],
+    "us": [
+      {
+        "src": "/photos/us/2023-img-2344-6e9d10f0.jpg",
+        "width": 2400,
+        "height": 1800,
+        "bytes": 784526,
+        "source": "2023_IMG_2344.JPG",
+        "sourceSha256": "9ec1c056299cb515b82972878bc14714d5130d02ac4d3a157ae1ac796ae291aa"
+      },
+      {
+        "src": "/photos/us/2024-img-8039-95f630b9.jpg",
+        "width": 1536,
+        "height": 2048,
+        "bytes": 360984,
+        "source": "2024_IMG_8039.JPG",
+        "sourceSha256": "3e4a4e3b0523c12e796ee2dbfd56aadde08c6bf06bdd9e5c210cf5b298cae806"
+      }
+    ]
+  }
 }

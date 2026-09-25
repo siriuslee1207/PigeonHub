@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!member) return {};
 
   const title = member.displayName;
-  const description = `${member.role}・${member.tagline}`;
+  const description = `${member.role}・${member.tagline.join("・")}`;
   const url = `/members/${member.slug}`;
 
   return {

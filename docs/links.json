@@ -37,7 +37,7 @@
     },
     {
       "name": "member-pistachio",
-      "label": "Pistachio（會員）",
+      "label": "開心果（會員）",
       "path": "/members/pistachio",
       "url": "https://pigeon-hub-one.vercel.app/members/pistachio",
       "kind": "member",
@@ -85,7 +85,7 @@
     },
     {
       "name": "member-ganyaya",
-      "label": "Ganyaya（會員）",
+      "label": "乾爺爺（會員）",
       "path": "/members/ganyaya",
       "url": "https://pigeon-hub-one.vercel.app/members/ganyaya",
       "kind": "member",
@@ -101,7 +101,7 @@
     },
     {
       "name": "member-us",
-      "label": "US（會員）",
+      "label": "鵝絲（會員）",
       "path": "/members/us",
       "url": "https://pigeon-hub-one.vercel.app/members/us",
       "kind": "member",
@@ -109,7 +109,7 @@
     },
     {
       "name": "member-fengsao",
-      "label": "FengSao（會員）",
+      "label": "峰嫂（會員）",
       "path": "/members/fengsao",
       "url": "https://pigeon-hub-one.vercel.app/members/fengsao",
       "kind": "member",

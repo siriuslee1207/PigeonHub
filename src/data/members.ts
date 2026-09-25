@@ -32,8 +32,8 @@ export type Member = {
   role: MemberRole;
   /** 所在地（選填） */
   location?: string;
-  /** 一句話簡介 */
-  tagline: string;
+  /** 個人簡介，每一項在頁面上獨立一行 */
+  tagline: string[];
   /** 自介段落（選填），用 \n 分段 */
   bio?: string;
   /**
@@ -50,107 +50,127 @@ export type Member = {
 
 export const PLACEHOLDER_AVATAR = "/avatars/TempPP.svg";
 
-const PENDING_TAGLINE = "個人簡介待補";
-
 export const members: readonly Member[] = [
   {
     slug: "minj",
     displayName: "MinJ",
     role: "會長",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["鴿友會中心", "永遠在掉封包", "城市尋寶醬油仔"],
+    highlights: [
+      { year: 2015, title: "約吃早餐，到樓下叫人還裝睡不下來" },
+      { year: 2016, title: "開始時常忘記鵝絲的存在" },
+      { year: 2016, title: "創立《Min姊の研究生日常》粉絲專頁" },
+      { year: 2022, title: "建立鴿友會總部" },
+      { year: 2023, title: "企圖在自己的結婚登記日放見證人鴿子" },
+      { year: 2023, title: "鴿友會會長選舉第一次出現競爭對手" },
+    ],
   },
   {
     slug: "kk",
     displayName: "KK",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["Intel 第一把交椅"],
+    highlights: [
+      { year: 2020, title: "擄獲會長的心" },
+      { year: 2021, title: "被迫加入鴿友會" },
+      { year: 2023, title: "與會長結為連理" },
+    ],
   },
   {
     slug: "pistachio",
-    displayName: "Pistachio",
+    displayName: "開心果",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["把媽媽當跳板"],
+    highlights: [{ year: 2025, title: "正式成為鴿友會本部吉祥物" }],
   },
   {
     slug: "peggy",
     displayName: "Peggy",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: [
+      "傘蜥蜴始祖",
+      "會長好麻吉",
+      "帝寶一姐",
+      "會長健身好夥伴",
+      "待在台灣比待在國外的時間還少",
+    ],
+    highlights: [{ year: 2024, title: "把巨城當魁地奇場地" }],
   },
   {
     slug: "eugene",
     displayName: "Eugene",
     role: "會員",
-    tagline: PENDING_TAGLINE,
+    tagline: ["少女心", "即將深根澳洲"],
     highlights: [
-      { year: 2023, title: "曾參選 112 年度會長選舉" },
-      { title: "差點在會長登記結婚當天被會長放鴿子" },
+      { year: 2022, title: "差點在會長登記結婚當天被會長放鴿子" },
+      { year: 2022, title: "建立鴿友會中和分會" },
+      { year: 2023, title: "參選 112 年度鴿友會會長" },
+      { year: 2024, title: "鴿友會澎湖分會場勘" },
     ],
-    isPlaceholder: true,
   },
   {
     slug: "caber",
     displayName: "Caber",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["基因定序專家", "即將深根澳洲"],
+    highlights: [{ year: 2024, title: "被迫加入鴿友會" }],
   },
   {
     slug: "kage",
     displayName: "Kage",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["貓善被貓欺", "領巾永遠少一半"],
+    highlights: [{ year: 2024, title: "獲聘為鴿友會中和分會吉祥物" }],
   },
   {
     slug: "hikari",
     displayName: "Hikari",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["打架不會輸"],
+    highlights: [{ year: 2025, title: "晉升為鴿友會中和分會吉祥物" }],
   },
   {
     slug: "ganyaya",
-    displayName: "Ganyaya",
+    displayName: "乾爺爺",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: [
+      "假日加班組",
+      "永遠40歲",
+      "總是神秘嘉賓，會不會來純憑運氣",
+      "身價跟股價一樣一直翻倍的男人",
+    ],
+    highlights: [
+      { year: 2021, title: "建立竹北分會" },
+      { year: 2024, title: "把巨城當魁地奇場地" },
+      { year: 2025, title: "解散竹北分會" },
+    ],
   },
   {
     slug: "ekai",
     displayName: "EKai",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["假日加班組", "這是什麼顏色", "拉窗簾需要騎腳踏車"],
+    highlights: [
+      { year: 2017, title: "從此跟銀絲捲脫離不了關係" },
+      { year: 2024, title: "參訪鴿友會苗栗分會" },
+    ],
   },
   {
     slug: "us",
-    displayName: "US",
+    displayName: "鵝絲",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["綠手指", "每個月都是壽星", "準備開中醫館", "鵝絲你在喔"],
+    highlights: [
+      { year: 2016, title: "開始被會長忘記" },
+      { year: 2023, title: "登上計程車車身廣告" },
+    ],
   },
   {
     slug: "fengsao",
-    displayName: "FengSao",
+    displayName: "峰嫂",
     role: "會員",
-    tagline: PENDING_TAGLINE,
-    highlights: [],
-    isPlaceholder: true,
+    tagline: ["多肉栽培家"],
+    highlights: [{ year: 2016, title: "剪輯鵝絲影片，照片放錯人" }],
   },
 ];
 

@@ -57,7 +57,7 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
 | `realName` | 本名（選填） |
 | `role` | `"會長"` 或 `"會員"` |
 | `location` | 所在地（選填） |
-| `tagline` | 一句話簡介 |
+| `tagline` | 個人簡介，字串陣列，每一項在頁面上獨立一行 |
 | `bio` | 自介段落（選填），用 `\n` 分段 |
 | `avatar` | （選填）手動指定頭像路徑，例如 `"/avatars/TempPP.svg"`。一般不用填，照片交給下方「頭像」流程處理；沒照片也沒指定就顯示預設頭像 |
 | `highlights` | 事蹟列表：被會長放鴿子的紀錄，會長本人則是放鴿子的紀錄。每筆有 `year`（年份，選填）、`title`（標題）、`description`（補充，選填）；有年份的由舊到新排，沒年份的排最後 |
@@ -69,7 +69,7 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
   slug: "kk",
   displayName: "KK",
   role: "會員",
-  tagline: "被放鴿子三次仍然相信會長的人。",
+  tagline: ["被放鴿子三次仍然相信會長的人", "第二項會另起一行"],
   bio: "第一段自介。\n第二段自介。",
   highlights: [
     { year: 2025, title: "跨年夜被放鴿子", description: "會長說在路上了，然後就沒有然後了。" },

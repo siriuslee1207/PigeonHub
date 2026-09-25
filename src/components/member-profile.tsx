@@ -43,7 +43,11 @@ export function MemberProfile({ member }: { member: Member }) {
           <p className="mt-1 text-sm text-muted">{member.location}</p>
         )}
 
-        <p className="mt-5 text-lg leading-8">{member.tagline}</p>
+        <ul className="mt-5 space-y-1 text-lg leading-8">
+          {member.tagline.map((line, index) => (
+            <li key={index}>{line}</li>
+          ))}
+        </ul>
 
         {bioParagraphs.length > 0 && (
           <div className="mt-4 space-y-3 leading-8 text-foreground/85">
