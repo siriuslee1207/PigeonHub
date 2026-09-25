@@ -18,7 +18,7 @@ type Props = {
 /**
  * 全螢幕放大檢視。用原生 <dialog> 的 showModal()：Esc 關閉、焦點鎖在對話框內、關閉後焦點回到原本的按鈕，
  * 都由瀏覽器處理。裡面同樣是一條 scroll-snap 軌道，手機左右滑、桌機用 ‹ › 或鍵盤方向鍵。
- * 照片依原始比例等比縮放置中；點照片以外的暗處或右上角 ✕ 關閉。
+ * 照片依原始比例等比縮放到貼齊可用區域（不足也放大）並置中；點照片以外的暗處或右上角 ✕ 關閉。
  */
 export function PhotoLightbox({ photos, ownerName, openIndex, onClose }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -93,7 +93,7 @@ export function PhotoLightbox({ photos, ownerName, openIndex, onClose }: Props) 
             role="group"
             aria-label={`第 ${i + 1} 張，共 ${count} 張`}
             onClick={closeIfBackdrop}
-            className="flex h-full w-full shrink-0 snap-center items-center justify-center p-3 pb-12 sm:p-10 sm:pb-14"
+            className="flex h-full w-full shrink-0 snap-center items-center justify-center p-3 pb-12 [container-type:size] sm:p-10 sm:pb-14"
           >
             <Image
               src={photo.src}
@@ -101,7 +101,10 @@ export function PhotoLightbox({ photos, ownerName, openIndex, onClose }: Props) 
               width={photo.width}
               height={photo.height}
               sizes="100vw"
-              className="h-auto max-h-full w-auto max-w-full rounded-md object-contain shadow-2xl"
+              // 寬度取「可用寬」與「可用高 × 長寬比」較小者，高度跟著比例走：小圖也會放大到貼齊可用區域。
+              // 不用 fill + object-contain，是為了讓 <img> 的框等於照片本身，圓角、陰影和「點暗處關閉」才會對齊照片邊緣。
+              style={{ width: `min(100cqw, 100cqh * ${photo.width / photo.height})` }}
+              className="h-auto rounded-md object-contain shadow-2xl"
               loading={i === openIndex ? "eager" : "lazy"}
             />
           </figure>
