@@ -86,7 +86,7 @@ Vercel 部署做的事就是 `next build` 然後啟動伺服器，所以在本�
    **相簿照片**：放進 `data/photos/<slug>/`，檔名任意，顯示順序就是檔名排序（數字按大小排），想調順序改檔名即可，例如 `01-xxx.jpg`、`02-xxx.jpg`。
    兩個資料夾都接受 jpg、png、webp、heic，且都不進 git，原圖只留在你電腦。
    **注意是 `data/`，不是 `public/`**：`public/avatars/`、`public/photos/` 裡的檔案全部由腳本產生，手動放進去的原圖不會顯示，build 檢查也會報錯。
-2. 執行 `npm run images`（內部是 `python -m uv run scripts/images/make_images.py`，uv 只要有用 pip 裝在 Python 裡就能跑，不需要在 PATH 上）。腳本會轉正、轉 sRGB、輸出 JPEG 並清掉 GPS 等 metadata：頭像置中裁成 512×512 正方形，寫到 `public/avatars/<slug>-<雜湊>.jpg`；相簿照片不裁切、長邊縮到 1600px，寫到 `public/photos/<slug>/<檔名>-<雜湊>.jpg`。同時更新 [`src/data/images.json`](src/data/images.json)。
+2. 執行 `npm run images`（內部是 `python -m uv run scripts/images/make_images.py`，uv 只要有用 pip 裝在 Python 裡就能跑，不需要在 PATH 上）。腳本會轉正、轉 sRGB、輸出 JPEG 並清掉 GPS 等 metadata：頭像置中裁成 512×512 正方形，寫到 `public/avatars/<slug>-<雜湊>.jpg`；相簿照片不裁切、長邊縮到 2400px（原圖較小就維持原尺寸），寫到 `public/photos/<slug>/<檔名>-<雜湊>.jpg`。同時更新 [`src/data/images.json`](src/data/images.json)。
 3. `npm run preview` 看一下，再把 `public/avatars/`、`public/photos/` 與 `src/data/images.json` 一起 commit。
 
 網站依 images.json 決定每個人的頭像與相簿（[`src/data/images.ts`](src/data/images.ts)），members.ts 不用填路徑。檔名帶內容雜湊，換照片時網址會跟著變，不會吃到瀏覽器或 CDN 的舊快取；不再使用的舊檔會自動刪除。有照片的人，個人頁下方會多出「照片」輪播（[`src/components/photo-carousel.tsx`](src/components/photo-carousel.tsx)）：一次一張、兩側露出前後張邊緣、可滑動或用 ‹ › 切換；點照片會開啟全螢幕放大檢視（[`src/components/photo-lightbox.tsx`](src/components/photo-lightbox.tsx)），同樣可滑動、用 ‹ › 或鍵盤左右鍵切換，按 Esc、右上角 ✕ 或點暗處關閉。

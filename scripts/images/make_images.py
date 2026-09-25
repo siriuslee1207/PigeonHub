@@ -6,7 +6,7 @@
 把 data/ 裡的原始照片轉成網站用的圖檔，並更新 src/data/images.json。一次處理兩種：
 
   頭像  data/avatars/<slug>.<ext>          → public/avatars/<slug>-<雜湊>.jpg      512×512，置中裁成正方形
-  照片  data/photos/<slug>/<任意檔名>.<ext>  → public/photos/<slug>/<檔名>-<雜湊>.jpg  長邊最多 1600px，不裁切
+  照片  data/photos/<slug>/<任意檔名>.<ext>  → public/photos/<slug>/<檔名>-<雜湊>.jpg  長邊最多 2400px，不裁切
 
 用法：
   uv run scripts/images/make_images.py                 # 或 npm run images
@@ -55,7 +55,7 @@ SLUG_RE = re.compile(r'^\s*slug:\s*"([a-z0-9-]+)"\s*,?\s*$', re.M)
 OUTPUT_RE = re.compile(r"^(?P<stem>[a-z0-9-]+)-(?P<hash>[0-9a-f]{8})\.jpg$")
 
 DEFAULT_AVATAR_SIZE = 512
-DEFAULT_PHOTO_MAX_EDGE = 1600
+DEFAULT_PHOTO_MAX_EDGE = 2400
 AVATAR_QUALITY = 85
 PHOTO_QUALITY = 82
 HASH_LEN = 8

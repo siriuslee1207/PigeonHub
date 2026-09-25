@@ -27,9 +27,9 @@ const PHOTO_SOURCE_DIR = resolve(REPO_ROOT, "data/photos");
 const AVATAR_OUTPUT_DIR = resolve(PUBLIC_DIR, "avatars");
 const PHOTO_OUTPUT_DIR = resolve(PUBLIC_DIR, "photos");
 
-/** 大小上限。腳本輸出的 512px 頭像通常 30–120 KB，1600px 照片通常 150–500 KB。 */
+/** 大小上限。腳本輸出的 512px 頭像通常 30–120 KB，長邊 2400px 內的照片通常 300 KB–1 MB。 */
 const AVATAR_MAX_BYTES = 300 * 1024;
-const PHOTO_MAX_BYTES = 900 * 1024;
+const PHOTO_MAX_BYTES = 1536 * 1024;
 const RUN_HINT =
   "請執行 uv run scripts/images/make_images.py（或 npm run images），再把 public/avatars/、public/photos/ 與 src/data/images.json 一起 commit。";
 
