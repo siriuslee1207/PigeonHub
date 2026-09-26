@@ -1,5 +1,6 @@
 import type { Member } from "@/data/members";
 import { MemberAvatar } from "@/components/member-avatar";
+import { SocialLinks } from "@/components/social-links";
 import { getAvatarSrc } from "@/data/images";
 
 export function MemberProfile({ member }: { member: Member }) {
@@ -48,6 +49,7 @@ export function MemberProfile({ member }: { member: Member }) {
             <li key={index}>{line}</li>
           ))}
         </ul>
+        <SocialLinks member={member} />
 
         {bioParagraphs.length > 0 && (
           <div className="mt-4 space-y-3 leading-8 text-foreground/85">

@@ -42,6 +42,10 @@ export type Member = {
    * 沒照片也沒指定就顯示 PLACEHOLDER_AVATAR。
    */
   avatar?: string;
+  /** Instagram 網址（選填），例如 "https://www.instagram.com/xxx/"。有填才會在個人頁顯示圖示。 */
+  instagram?: string;
+  /** Facebook 粉絲專頁網址（選填），例如 "https://www.facebook.com/xxx"。有填才會在個人頁顯示圖示。 */
+  facebook?: string;
   /** 事蹟列表：被會長放鴿子的紀錄（會長本人則是放鴿子的紀錄） */
   highlights: Highlight[];
   /** true 表示內容尚未填寫，頁面會顯示「資料待補」提示 */
@@ -56,6 +60,7 @@ export const members: readonly Member[] = [
     displayName: "MinJ",
     role: "會長",
     tagline: ["鴿友會中心", "永遠在掉封包", "城市尋寶醬油仔"],
+    facebook: "https://www.facebook.com/profile.php?id=100063571704561",
     highlights: [
       { year: 2015, title: "約吃早餐，到樓下叫人還裝睡不下來" },
       { year: 2016, title: "開始時常忘記鵝絲的存在" },
@@ -81,6 +86,7 @@ export const members: readonly Member[] = [
     displayName: "開心果",
     role: "會員",
     tagline: ["把媽媽當跳板"],
+    instagram: "https://www.instagram.com/pistachiooo2562/",
     highlights: [{ year: 2025, title: "正式成為鴿友會本部吉祥物" }],
   },
   {
@@ -120,6 +126,7 @@ export const members: readonly Member[] = [
     displayName: "Kage",
     role: "會員",
     tagline: ["貓善被貓欺", "領巾永遠少一半"],
+    instagram: "https://www.instagram.com/kage_hululu_hikari_eateateat_/",
     highlights: [{ year: 2024, title: "獲聘為鴿友會中和分會吉祥物" }],
   },
   {
@@ -127,6 +134,7 @@ export const members: readonly Member[] = [
     displayName: "Hikari",
     role: "會員",
     tagline: ["打架不會輸"],
+    instagram: "https://www.instagram.com/kage_hululu_hikari_eateateat_/",
     highlights: [{ year: 2025, title: "晉升為鴿友會中和分會吉祥物" }],
   },
   {
@@ -174,11 +182,20 @@ export const members: readonly Member[] = [
   },
 ];
 
-// 建置時檢查：slug 必須是小寫英數與連字號，且不可重複（否則名片網址會壞）。
+// 建置時檢查：slug 必須是小寫英數與連字號，且不可重複（否則名片網址會壞）；
+// 社群連結必須是完整的 https 網址。
 {
   const SLUG_RE = /^[a-z0-9-]+$/;
   const seen = new Set<string>();
   for (const member of members) {
+    for (const field of ["instagram", "facebook"] as const) {
+      const url = member[field];
+      if (url !== undefined && !/^https:\/\/\S+$/.test(url)) {
+        throw new Error(
+          `members.ts：${member.slug} 的 ${field}「${url}」必須是 https:// 開頭的完整網址。`,
+        );
+      }
+    }
     if (!SLUG_RE.test(member.slug)) {
       throw new Error(
         `members.ts：slug「${member.slug}」只能使用小寫英數與連字號。`,
